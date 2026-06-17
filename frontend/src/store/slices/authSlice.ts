@@ -27,6 +27,7 @@ export const fetchUser = createAsyncThunk('auth/fetchUser', async (_, { rejectWi
   try {
     const response = await api.get('/auth/me');
     return response.data;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (error: any) {
     return rejectWithValue(error.response.data);
   }

@@ -38,7 +38,7 @@ export default function TeacherDashboard() {
       toast.success('Meeting scheduled successfully!');
       setIsModalOpen(false);
       fetchMeetings();
-    } catch (error) {
+    } catch {
       toast.error('Failed to schedule meeting');
     }
   };
@@ -59,6 +59,7 @@ export default function TeacherDashboard() {
         </div>
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={user?.profileImage || 'https://via.placeholder.com/40'} alt="Profile" className="w-10 h-10 rounded-full border-2 border-indigo-100" />
             <div className="text-sm">
               <p className="font-semibold">{user?.name}</p>
@@ -75,7 +76,7 @@ export default function TeacherDashboard() {
         <div className="flex justify-between items-center mb-10">
           <div>
             <h1 className="text-3xl font-bold text-gray-900 mb-2">Welcome back, {user?.name?.split(' ')[0]}! 👋</h1>
-            <p className="text-gray-500">Here's what's happening with your classes today.</p>
+            <p className="text-gray-500">Here&apos;s what&apos;s happening with your classes today.</p>
           </div>
           <button 
             onClick={() => setIsModalOpen(true)}
@@ -132,6 +133,7 @@ export default function TeacherDashboard() {
               </div>
             ) : (
               <div className="space-y-4">
+                {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
                 {meetings.map((m: any) => (
                   <div key={m._id} className="flex items-center justify-between p-4 border border-gray-100 rounded-xl hover:border-indigo-100 hover:bg-indigo-50/30 transition-all">
                     <div>
@@ -202,6 +204,7 @@ export default function TeacherDashboard() {
                   {candidates.length === 0 ? (
                     <p className="text-sm text-gray-500 italic">No candidates available.</p>
                   ) : (
+                    // eslint-disable-next-line @typescript-eslint/no-explicit-any
                     candidates.map((c: any) => (
                       <label key={c._id} className="flex items-center gap-2 mb-2 cursor-pointer">
                         <input 

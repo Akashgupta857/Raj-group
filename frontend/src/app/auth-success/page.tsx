@@ -15,6 +15,7 @@ function AuthSuccessContent() {
     
     if (token) {
       dispatch(setToken(token));
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       dispatch(fetchUser() as any).then((res: any) => {
         if (res.payload?.role === 'Teacher') {
           router.push('/teacher/dashboard');

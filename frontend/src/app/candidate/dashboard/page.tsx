@@ -37,6 +37,7 @@ export default function CandidateDashboard() {
         </div>
         <div className="flex items-center gap-6">
           <div className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
             <img src={user?.profileImage || 'https://via.placeholder.com/40'} alt="Profile" className="w-10 h-10 rounded-full border-2 border-teal-100" />
             <div className="text-sm">
               <p className="font-semibold">{user?.name}</p>
@@ -60,9 +61,10 @@ export default function CandidateDashboard() {
              <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-10 text-center">
                <Calendar className="mx-auto text-gray-400 mb-4" size={48} />
                <h3 className="text-lg font-medium text-gray-900 mb-1">No upcoming meetings</h3>
-               <p className="text-gray-500">You're all caught up! Enjoy your day.</p>
+               <p className="text-gray-500">You&apos;re all caught up! Enjoy your day.</p>
              </div>
           ) : (
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             meetings.map((m: any) => (
               <div key={m._id} className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 flex items-center justify-between hover:shadow-md transition-shadow">
                 <div className="flex items-center gap-5">
